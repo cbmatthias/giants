@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { Button } from "./Button";
 function App() {
+  const style = getStyles();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 style={style.title}>Hello!</h1>
+      <Button notification="Statistics" color="blacK" />
+      <Button notification="Calendar" color="green" />
+      <hr />
+      <a target="_blank" href="https://www.google.com" style={style.linkButton}>
+        Google
+      </a>
     </div>
   );
 }
+
+const getStyles = () => {
+  return {
+    title: {
+      color: "blue",
+      fontSize: "20px",
+    },
+    linkButton: {
+      background: "red",
+      border: "3px solid royalblue",
+      color: "white",
+      padding: "3px",
+    },
+  };
+};
 
 export default App;
