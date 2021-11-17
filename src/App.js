@@ -1,34 +1,26 @@
 import "./App.css";
-import { Button } from "./Button";
+import { Routes, Route } from "react-router-dom";
+
+import { Home } from "./views/Home";
+import { Schedule } from "./views/Schedule";
+import { PlayersList } from "./views/PlayersList";
+
 function App() {
   const style = getStyles();
 
   return (
     <div className="App">
-      <h1 style={style.title}>Hello!</h1>
-      <Button notification="Statistics" color="blacK" />
-      <Button notification="Calendar" color="green" />
-      <hr />
-      <a target="_blank" href="https://www.google.com" style={style.linkButton}>
-        Google
-      </a>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/players-list" element={<PlayersList />} />
+        <Route path="/schedule" element={<Schedule />} />
+      </Routes>
     </div>
   );
 }
 
-const getStyles = () => {
-  return {
-    title: {
-      color: "blue",
-      fontSize: "20px",
-    },
-    linkButton: {
-      background: "red",
-      border: "3px solid royalblue",
-      color: "white",
-      padding: "3px",
-    },
-  };
-};
+const getStyles = () => ({
+  container: {},
+});
 
 export default App;
